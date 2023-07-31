@@ -1,0 +1,79 @@
+.break.sheet.item {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  text-rendering: geometricPrecision;
+}
+
+.break.sheet.item .window-header {
+  background: linear-gradient(to right, #EE2882, #893795);
+  border-bottom: 0;
+  border-top-right-radius: 10px;
+  text-transform: uppercase;
+  padding: 0 10px 0 16px;
+  flex: unset;
+  justify-content: flex-end;
+}
+
+.break.sheet.item .window-header .window-title {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  line-height: 30px;
+}
+
+.break.sheet.item .window-header h4 {
+  white-space: nowrap;
+}
+
+.break.sheet.item .window-header a {
+  font-weight: bold;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  padding: 0 6px;
+}
+
+.break.sheet.item .window-header h4 a {
+  height: 30px;
+}
+
+.break.sheet.item .window-header h4 a:hover {
+  opacity: 1;
+}
+
+.break.sheet.item .window-header h4 a i[class^=fa] {
+  margin-right: 0;
+}
+
+.break.sheet.item .window-header a:hover {
+  text-shadow: none;
+  background: rgb(255 255 255 / 19%);
+}
+
+.break.sheet.item .window-header a i[class^=fa] {
+  font-size: 1.2em;
+  margin-right: 5px;
+}
+
+.break.sheet.item .window-content {
+  background: #ffffff;
+  border-bottom-right-radius: 10px;
+  padding: 15px;
+}
+
+.break.sheet.item .window-resizable-handle {
+  border-bottom-right-radius: 10px;
+  padding-bottom: 3px;
+  bottom: -0.5px;
+  right: -0.5px;
+  border: 0;
+  cursor: nwse-resize;
+}
+
+.break.sheet.item .window-content img.profile {
+  width: auto;
+  height: auto;
+  max-height: 300px;
+}

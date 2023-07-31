@@ -2,11 +2,11 @@
   "id": "break",
   "title": "Break!! RPG",
   "description": "A system for playing breakrpg.com",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "compatibility": {
-    "minimum": "10",
-    "verified": "10",
-    "maximum": "10"
+    "minimum": "11",
+    "verified": "11",
+    "maximum": "11"
   },
   "authors": [
     {
@@ -17,8 +17,8 @@
     }
   ],
   "scripts": [],
-  "esmodules": [],
-  "styles": [],
+  "esmodules": ["scripts/break.mjs"],
+  "styles": ["styles/global.css", "styles/sheets/itemSheet.css"],
   "packs": [],
   "languages": [
     {

@@ -1,0 +1,313 @@
+<form class="editable flexcol" autocomplete="off">
+  <header class="sheet-header flexrow">
+    <img
+      class="profile"
+      src="{{item.img}}"
+      data-tooltip="test"
+      data-edit="img"
+      title="{{item.name}}"
+      height="64"
+      width="64"
+    />
+
+    <div class="header-details flexrow">
+      <h1 class="charname">
+        <input
+          type="text"
+          name="name"
+          value="{{item.name}}"
+          placeholder="Name"
+        />
+      </h1>
+
+      <div class="item-subtitle">
+        <h4 class="item-type">Weapon</h4>
+        <span class="item-status">Not Equipped</span>
+      </div>
+
+      <ul class="summary flexrow">
+        <li>Simple Melee</li>
+        <li>
+          <select name="system.rarity">
+            <option value="" selected=""></option>
+            <option value="common">common</option>
+            <option value="uncommon">uncommon</option>
+            <option value="rare">rare</option>
+            <option value="veryRare">very rare</option>
+            <option value="legendary">legendary</option>
+            <option value="artifact">artifact</option>
+          </select>
+        </li>
+        <li>
+          <input
+            type="text"
+            name="system.source"
+            value=""
+            placeholder="Source"
+          />
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="sheet-navigation tabs" data-group="primary">
+    <a class="item active" data-tab="description">Description</a>
+    <a class="item" data-tab="details">Details</a>
+    <a class="item" data-tab="effects">Effects</a>
+  </nav>
+
+  <section class="sheet-body">
+    <div class="tab flexrow active" data-group="primary" data-tab="description">
+      <div class="item-properties">
+        <div class="form-group">
+          <label>Quantity</label>
+          <input type="number" value="1" step="any" name="system.quantity" />
+        </div>
+
+        <div class="form-group">
+          <label>Weight</label>
+          <input type="number" value="0" step="any" name="system.weight" />
+        </div>
+
+        <div class="form-group">
+          <label>Price</label>
+          <input type="number" value="0" step="any" name="system.price.value" />
+          <select name="system.price.denomination">
+            <option value="pp">pp</option>
+            <option value="gp" selected="">gp</option>
+            <option value="ep">ep</option>
+            <option value="sp">sp</option>
+            <option value="cp">cp</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="editor">
+        <a class="editor-edit"><i class="fas fa-edit"></i></a>
+        <div
+          class="editor-content"
+          data-engine="prosemirror"
+          data-collaborate="false"
+          data-edit="system.description.value"
+        ></div>
+      </div>
+    </div>
+
+    <div class="tab details" data-group="primary" data-tab="details">
+      <h3 class="form-header">Weapon Details</h3>
+
+      <div class="form-group">
+        <label>Weapon Type</label>
+        <select name="system.weaponType">
+          <option value="simpleM" selected="">Simple Melee</option>
+          <option value="simpleR">Simple Ranged</option>
+          <option value="martialM">Martial Melee</option>
+          <option value="martialR">Martial Ranged</option>
+          <option value="natural">Natural</option>
+          <option value="improv">Improvised</option>
+          <option value="siege">Siege Weapon</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Base Weapon</label>
+        <select name="system.baseItem">
+          <option value="" selected=""></option>
+          <option value="club">Club</option>
+          <option value="dagger">Dagger</option>
+          <option value="greatclub">Greatclub</option>
+          <option value="handaxe">Handaxe</option>
+          <option value="javelin">Javelin</option>
+          <option value="lighthammer">Light Hammer</option>
+          <option value="mace">Mace</option>
+          <option value="quarterstaff">Quarterstaff</option>
+          <option value="sickle">Sickle</option>
+          <option value="spear">Spear</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Attunement</label>
+        <select name="system.attunement" data-dtype="Number">
+          <option value="0" selected="">Attunement Not Required</option>
+          <option value="1">Attunement Required</option>
+          <option value="2">Attuned</option>
+        </select>
+      </div>
+
+      <div class="form-group stacked">
+        <label>Weapon Status</label>
+        <div class="form-fields">
+          <label class="checkbox">
+            <input type="checkbox" name="system.proficient" checked="" />
+            Proficient
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="system.equipped" /> Equipped
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="system.identified" checked="" />
+            Identified
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group stacked weapon-properties">
+        <label>Weapon Properties</label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.properties.ada" /> Adamantine
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.properties.amm" /> Ammunition
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.properties.fin" /> Finesse
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.properties.fir" /> Firearm
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.properties.foc" /> Focus
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.properties.hvy" /> Heavy
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.properties.lgt" /> Light
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.properties.lod" /> Loading
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.properties.mgc" /> Magical
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.properties.rch" /> Reach
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.properties.rel" /> Reload
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.properties.ret" /> Returning
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.properties.sil" /> Silvered
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.properties.spc" /> Special
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.properties.thr" /> Thrown
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.properties.two" /> Two-Handed
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.properties.ver" /> Versatile
+        </label>
+      </div>
+
+      <h3 class="form-header">Weapon Usage</h3>
+
+      <div class="form-group input-select">
+        <label>Activation Cost</label>
+        <div class="form-fields">
+          <input
+            type="number"
+            step="any"
+            name="system.activation.cost"
+            value=""
+            placeholder="—"
+          />
+          <select
+            name="system.activation.type"
+            data-tooltip="DND5E.ItemActivationType"
+          >
+            <option value="">None</option>
+            <option value="action">Action</option>
+            <option value="bonus">Bonus Action</option>
+            <option value="reaction">Reaction</option>
+            <option value="minute">Minutes</option>
+            <option value="hour">Hours</option>
+            <option value="day">Days</option>
+            <option value="special">Special</option>
+            <option value="legendary">Legendary Action</option>
+            <option value="lair">Lair Action</option>
+            <option value="crew">Crew Action</option>
+          </select>
+        </div>
+      </div>
+
+      <h3 class="form-header">Weapon Attack</h3>
+
+      <div class="form-group select">
+        <label>Action Type</label>
+        <select name="system.actionType">
+          <option value="" selected=""></option>
+          <option value="mwak">Melee Weapon Attack</option>
+          <option value="rwak">Ranged Weapon Attack</option>
+          <option value="msak">Melee Spell Attack</option>
+          <option value="rsak">Ranged Spell Attack</option>
+          <option value="save">Saving Throw</option>
+          <option value="heal">Healing</option>
+          <option value="abil">Ability Check</option>
+          <option value="util">Utility</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="tab effects flexcol" data-group="primary" data-tab="effects">
+      <ol class="items-list effects-list">
+        <li class="items-header flexrow" data-effect-type="temporary">
+          <h3 class="item-name effect-name flexrow">Temporary Effects</h3>
+          <div class="effect-source">Source</div>
+          <div class="effect-source">Duration</div>
+          <div class="item-controls effect-controls flexrow">
+            <a
+              class="effect-control"
+              data-action="create"
+              data-tooltip="DND5E.EffectCreate"
+            >
+              <i class="fas fa-plus"></i> Add
+            </a>
+          </div>
+        </li>
+
+        <ol class="item-list"></ol>
+        <li class="items-header flexrow" data-effect-type="passive">
+          <h3 class="item-name effect-name flexrow">Passive Effects</h3>
+          <div class="effect-source">Source</div>
+          <div class="effect-source">Duration</div>
+          <div class="item-controls effect-controls flexrow">
+            <a
+              class="effect-control"
+              data-action="create"
+              data-tooltip="DND5E.EffectCreate"
+            >
+              <i class="fas fa-plus"></i> Add
+            </a>
+          </div>
+        </li>
+
+        <ol class="item-list"></ol>
+        <li class="items-header flexrow" data-effect-type="inactive">
+          <h3 class="item-name effect-name flexrow">Inactive Effects</h3>
+          <div class="effect-source">Source</div>
+          <div class="effect-source">Duration</div>
+          <div class="item-controls effect-controls flexrow">
+            <a
+              class="effect-control"
+              data-action="create"
+              data-tooltip="DND5E.EffectCreate"
+            >
+              <i class="fas fa-plus"></i> Add
+            </a>
+          </div>
+        </li>
+
+        <ol class="item-list"></ol>
+      </ol>
+    </div>
+  </section>
+</form>
